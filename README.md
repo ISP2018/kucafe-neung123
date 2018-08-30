@@ -1,7 +1,5 @@
 # Branch and Merge Practice 
 
-## The Problem
-
 KU Cafe has a separate Breakfast menu and regular menu.  The Cafe owner is an SKE graduate who used git branches for the two menus:
 
 | Branch       | Menu   |
@@ -10,9 +8,6 @@ KU Cafe has a separate Breakfast menu and regular menu.  The Cafe owner is an SK
 | `breakfast`  | breakfast menu |
 
 Now, KU Cafe wants to combine the two into a single menu.
-
-Do the following.  Please perform all the steps below.  
-If your repository doesn't contain the "merges" described here you won't learn anything. You won't get credit, either.
 
 ## Reference
 
@@ -29,11 +24,15 @@ If your repository doesn't contain the "merges" described here you won't learn a
 3. On the master branch, view file `menu.md`.  Then checkout the "breakfast" branch and view `menu.md`.  What are the differences?  
 > Can you view differences between branches visually using a GUI tool or Github?    
 > This is something to explore on your own.
-
+```
+Ans: The breakfast branch menu.md contain some menu that the master branch didn't have
+         such as, Fried Eggs with rice, Miso Soup with Tofu, Rice Porridge with Chicken,
+         Toast with butter & jam, Waffles and Orange Juice.
+```
 4. Create a feature branch off of master for creating the new, unified menu.  First switch to `master`. Then create a new branch named `dev-one-menu` and switch to it.  What is(are) the command(s) for this?
 ```
-cmd>
-cmd>
+cmd> git branch dev-one-menu
+cmd> git checkout dev-one-menu
 ```
 
 5. (Optional) Are you tired of typing "git checkout xxxx"?  Create an alias "co" so you can just type "git co branchname" (Subersion has this alias):
@@ -49,7 +48,11 @@ cmd> git merge breakfast
 ```
 
 7. What did git do?  What is in `menu.md` now?
+```
+Ans: Git said 'error: Your local changes to the following files would be overwritten by merge: menu.md'.
 
+     in `menu.md` it has the same menu as master branch but changed some menu's price and sort the list by name.         
+```
 8. If you don't like the results of a merge, you can undo it.  The best command for this is:
 ```
 cmd> git reset --merge
